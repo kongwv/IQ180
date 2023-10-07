@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>Connected Clients</h1>
+    <button id = "reset">Reset Game</button>
+    <ul id="myList" style="display : grid; grid-template-columns: 1fr 1fr;" ></ul>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io();
+    socket.on('admin',(e)=>{
+        update(e.ca);
+    });
+
+    socket.on('user-disconnected',(e)=>{
+        update(e.ca);
+    });
+
+    function update(l){
+  
+        let list = []
+        document.getElementById("myList").innerText = "";
+        list = document.getElementById("myList");
+        for (i = 0; i < l.length; ++i) {
+            a = document.createElement('p');
+            b = document.createElement('p');
+            a.innerText = "sockets id: " + l[i].id; 
+            b.innerText =  "name: " + l[i].name;
+            list.appendChild(a);
+            list.appendChild(b);
+        }
+    };
+
+    document.getElementById("reset").addEventListener(("click"),function(){
+        socket.emit('resetGame')
+    });
+</script>
+
+</html>

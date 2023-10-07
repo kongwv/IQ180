@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+* { 
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      
+
+  }
+
+  body {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      background-image: url("river-8286407_1920.png");
+      background-size: cover;
+      background-position: center;
+      align-items: center;
+  
+  }
+  
+  #lobby{
+      
+      display: grid;
+      place-items: center;
+      transform: translateY(100px);
+      
+  }
+
+  #game{
+
+      
+      display: grid;
+      place-items: center;
+      
+  }
+
+  h1 {
+
+      margin: 50px 0 50px 0;
+      font-size: 8rem;
+      color: pink;
+      -webkit-text-stroke: .5px black;
+      transform: translate(20px,60px);
+      border-radius: 10%;
+      border-color: black;
+      font-family: 'Times New Roman', Times, serif;
+
+
+     
+      
+  }
+
+  h2 {
+      font-size: 2rem;
+      color: white;
+  }
+
+  h3 {
+      font-size: 1.5rem;
+      color: white;
+  }
+
+  #bor {
+      border: 3px solid rgb(206, 203, 203);
+      width: 500px;
+      height: 75px;
+      background-color: antiquewhite;
+      opacity: 100%;
+        
+      
+  }
+  p {
+      font-size: 2rem;
+      margin: 10px;
+      color: white;
+
+  }
+  #enterName{
+      color: blanchedalmond;
+  }
+
+  #back{
+      width: 195px;
+  }
+
+  input {
+      margin-bottom: 20px;
+      width: 290px;
+      padding: 10px;
+      font-size: 2rem;
+  }
+
+
+  img {
+      width: 200px;
+  }
+
+
+  button {
+
+      font-size: 2rem;
+      width: 75px;
+      height: 75px;
+      cursor: pointer;
+      background-color: rgb(206, 203, 203);
+      border-radius: 10px;
+      margin: 20px;
+
+
+  }
+  #submit,#start {
+
+      font-size: 2rem;
+      background-color: black;
+      opacity: 50%;
+      width: 200px;
+      height: 60px;
+      margin-left: 150px;
+      margin-right: 150px;
+      color: antiquewhite;
+      font-weight: bold;
+
+
+  }
+
+  #bh {
+      background-color: aliceblue;
+      font-size: 1.5rem;
+      width: 250px;
+      height: 50px;
+
+  }
+
+  /* #find {
+      font-size: 1.5rem;
+      color: white;
+      cursor: pointer;
+      padding: 7px;
+      border-radius: 10px;
+      width: 250px;
+      font-weight: bold;
+
+  } */
+
+  button:hover {
+      background-color: rgb(255, 255, 255);
+  }
+
+  button.enabled {
+      opacity: 1;
+  }
+
+
+  #game{
+      display: grid;
+      place-items: center;
+  }
+
+.status {
+      display: grid; 
+      width: 100vw; 
+      grid-template-columns: 1fr 1fr 1fr;
+       place-items: center;
+       margin-bottom: 20px;
+}
+#Qnum , #operators{
+      display: grid; 
+      place-items: center;
+      border: 2px solid rgba(red, green, blue, alpha);
+      /* a */
+      backdrop-filter: blur(50px);
+      box-shadow: 0 0 30px rgba(red, green, blue, alpha);
+      /* background-color: #003c80; */
+      
+
+}
+#Q1,#Q2,#Q3,#Q4,#Q5{
+      background-color: bisque;
+      transition: background-color 1s ease;
+}
+#Q1:hover,#Q2:hover,#Q3:hover,#Q4:hover,#Q5:hover{
+      background-color: wheat;
+      opacity: 50%;
+
+      
+}
+#GO {
+      display: grid; 
+      place-items: center;
+}
+#sol{
+      color: black;
+}
+#answer {
+      color: white;
+      
+
+}
+#find {
+      background-color: wheat;
+      font-size: 25px;
+      font-weight: bold;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      cursor: pointer;
+      transition: scale 100s ;
+      transition: background-color 1s ease;
+      width: 300px;
+      
+
+}
+ #find:hover {
+      background-color: ;
+      transform: scale(1.1);
+      border: #003c80;
+      
+  }
+#find:active {
+      background-color: #003c80;
+      transform: scale(0.9); /* Apply a scaling animation when clicked */
+  }
+
+
+
+#name {
+      border: red;
+      border-radius: 0%;
+      font-size: larger;
+      font-weight: bold;
+      
+      background-color: antiquewhite;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      
+}
+#enterName{
+      font-size: 2rem;
+      border-color: black;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-weight: bold;
+      color:rgb(0, 0, 0);
+      /* background-color: antiquewhite; */
+      opacity: 80%;
+      
+}
+
+
