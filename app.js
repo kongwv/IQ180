@@ -7,7 +7,7 @@ const path = require('path');
 const http = require('http');
 const {Server} = require('socket.io');
 const { Socket } = require('dgram');
-
+//tanthong
 const server = http.createServer(app);
 const io = new Server(server)
 app.use(express.static(path.resolve("")));
