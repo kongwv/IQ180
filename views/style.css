@@ -75,10 +75,7 @@
       color: white;
 
   }
-  #enterName{
-      color: blanchedalmond;
-  }
-
+  
   #back{
       width: 195px;
   }
@@ -174,15 +171,19 @@
       
 
 }
-#Q1,#Q2,#Q3,#Q4,#Q5{
+#Q1,#Q2,#Q3,#Q4,#Q5,#back,#O6,#O5,#O4,#O3,#O2,#O1{
       background-color: bisque;
-      transition: background-color 1s ease;
+      transition: background-color 1s ease-in-out;
 }
 #Q1:hover,#Q2:hover,#Q3:hover,#Q4:hover,#Q5:hover{
-      background-color: wheat;
-      opacity: 50%;
+      background-color: darkseagreen;
+      opacity: 80%;
+      transform: scale(1.1);
 
-      
+}
+#back:hover,#O6:hover,#O5:hover,#O4:hover,#O3:hover,#O2:hover,#O1:hover{
+      background-color: darkcyan;
+      transform: scale(1.1);
 }
 #GO {
       display: grid; 
@@ -201,17 +202,21 @@
       font-size: 25px;
       font-weight: bold;
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      cursor: pointer;
+      cursor :grab
       transition: scale 100s ;
       transition: background-color 1s ease;
       width: 300px;
       
+      
 
 }
  #find:hover {
-      background-color: ;
+      background-color: white ;
       transform: scale(1.1);
       border: #003c80;
+      text-decoration-line: underline;
+      
+
       
   }
 #find:active {
@@ -231,15 +236,43 @@
       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
       
 }
-#enterName{
+.enterName{
       font-size: 2rem;
       border-color: black;
       font-family: Verdana, Geneva, Tahoma, sans-serif;
       font-weight: bold;
       color:rgb(0, 0, 0);
       /* background-color: antiquewhite; */
-      opacity: 80%;
+      opacity: 100%;
+      background-color: bisque;
+      border-radius: 25%;
       
 }
+
+
+#start,#submit{
+      background-color: saddlebrown;
+      opacity: 80%;
+      cursor: pointer;
+      transition: background-color 1s ease-in-out;
+
+}
+#start:hover{
+      background-color: black;
+      transform: scale(1.1);
+
+
+}
+#start:active{
+      background-color: #003c80;
+}
+
+#submit:hover{
+      background-color: darkgreen;
+      transform: scale(1.1);
+}
+#answer[
+      
+]
 
 
