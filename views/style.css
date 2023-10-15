@@ -202,7 +202,7 @@
       font-size: 25px;
       font-weight: bold;
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      cursor :grab
+      cursor :grab;
       transition: scale 100s ;
       transition: background-color 1s ease;
       width: 300px;
@@ -231,7 +231,7 @@
       border-radius: 0%;
       font-size: larger;
       font-weight: bold;
-      
+      text-align: center;
       background-color: antiquewhite;
       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
       
@@ -271,8 +271,5 @@
       background-color: darkgreen;
       transform: scale(1.1);
 }
-#answer[
-      
-]
 
 
