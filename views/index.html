@@ -161,8 +161,10 @@
         document.getElementById("sol").innerText = "";
         Solution = "";
         track = [];
-        console.log(playct) 
+
         socket.emit("setup",{playct:playct});
+
+        //setup question
         socket.on("start",(e)=>{
             array = e.thearray
             Ans = e.Answer
@@ -172,7 +174,8 @@
                 i++;
             })
             document.getElementById("answer").innerText=Ans;
-        }) 
+        })
+        //set timer 
         let timer = parseInt(document.getElementById("timer").innerText);
         int = setInterval(()=> {
             timer--;
@@ -192,7 +195,6 @@
             if(e.className=="Q" ){
                 e.disabled=true;
                 track.push(e.id);
-                console.log(track);
             }
             let value = e.innerText;
             Solution = Solution.concat(value);
@@ -203,9 +205,8 @@
     })
 
     document.getElementById('back').addEventListener("click",function(){
-        console.log(Solution.slice(-1));        
+       
         if(['1','2','3','4','5','6','7','8','9'].includes(Solution.slice(-1))){
-            console.log(track.slice(-1));
             document.getElementById(track.pop()).disabled=false;
             
         }
@@ -219,7 +220,7 @@
     let P2time = 0;
 
     document.getElementById("submit").addEventListener("click", function () {
-        clearInterval(int);
+        clearInterval(int); //stop timer
         document.getElementById("start").disabled = false;
         alert("Submitted");
         document.querySelectorAll(".Q,.O").forEach(e => e.disabled = true);
@@ -266,12 +267,10 @@
             } else {
                 if (document.getElementById("turn").innerText == (P1name + "'s Turn")) {
                     alert("P1 wrong!!");
-                    
 
                 } else {
                     alert("P2 wrong!!");
-                    
-
+               
                 }
             }
 
@@ -329,8 +328,8 @@
     })
 
     socket.on('resetGame',()=>{
-        foundObject.p1.p1score = 2;
-        foundObject.p2.p2score = 2;
+        foundObject.p1.p1score = 0;
+        foundObject.p2.p2score = 0;
         document.getElementById("score1").innerText = foundObject.p1.p1score;
         document.getElementById("score2").innerText = foundObject.p2.p2score;
 
@@ -373,19 +372,15 @@
 
     function changeturn(){
         if(document.getElementById("turn").innerText==(P1name + "'s Turn")&&name==P2name){
-            console.log("ok")
             document.getElementById("com").style.display = "none";
         } 
         else if(document.getElementById("turn").innerText==(P2name + "'s Turn")&&name==P1name){
-            console.log("ok")
             document.getElementById("com").style.display = "none";
         }
         else if(document.getElementById("turn").innerText==(P2name + "'s Turn")&&name==P2name){
-            console.log("ok")
             document.getElementById("com").style.display = "block";
         }
         else if(document.getElementById("turn").innerText==(P1name + "'s Turn")&&name==P1name){
-            console.log("ok")
             document.getElementById("com").style.display = "block";
         }
 

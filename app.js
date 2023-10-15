@@ -40,19 +40,15 @@ io.on("connection",(socket)=>{
             if(arr.length>=2){
                 let p1obj={
                     p1name:arr[0],
-                    p1score:0,
-                    p1move:""
+                    p1score:0
                 }
                 let p2obj={
                     p2name:arr[1],
-                    p2score:0,
-                    p2move:""
+                    p2score:0
                 }
-
                 let obj={
                     p1:p1obj,
-                    p2:p2obj,
-                    sum:1
+                    p2:p2obj
                 }
                 playingArray.push(obj)
                 
