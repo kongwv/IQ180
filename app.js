@@ -7,9 +7,12 @@ const http = require('http');
 const {Server} = require('socket.io');
 const { Socket } = require('dgram');
 
+
+
 const server = http.createServer(app);
 const io = new Server(server)
 app.use(express.static(path.resolve("")));
+
 
 let Answer;
 let arr=[]
@@ -21,6 +24,10 @@ io.on("connection",(socket)=>{
     console.log(socket.id)
     connectedArray.push({id:(socket.id),name:""})
     io.emit('admin',{ca:connectedArray})
+
+    //socket.on('send-chat-message', message => {
+      //  console.log(message)
+    //})
 
 
     socket.on('disconnect', () => {
