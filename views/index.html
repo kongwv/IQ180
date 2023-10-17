@@ -9,12 +9,6 @@
 
 <body>
   
-    <!--<div id="message-container"></div>
-    <form id="send-container">
-        <input type="text" id="message-input">
-
-        <button type="submit" id = "send-button">Send</button>-->
-    
     <div id="lobby">  
         <h1>IQ180</h1>
         <div>
@@ -43,7 +37,8 @@
             <h3 id ="turn"></h3>
             <h3 id="score2Cont">Score : <span id="score2"></span></h3>
         </div>
-        <br>
+    
+        
         <div id="com">
             <div id="Qnum">
                 <div>
@@ -91,10 +86,18 @@
             <h1 id="winner" style="text-align: center;"></h1>
             <button id = "bh" >Back to first page</button>
         </div>
+        
     </div>
+    <!--<div id="message-container"></div>
+            <form id="send-container">
+        <input type="text" id="message-input">
+        <button type="submit" id = "send-button">Send</button>-->
 
 <script src="/socket.io/socket.io.js"></script>
 <script>
+    
+    
+
     document.getElementById("game").style.display = "none"
     document.getElementById("loading").style.display = "none"
     var socket = io();
@@ -153,7 +156,6 @@
 
 
     })
-
 
 
     let Solution = "";
@@ -378,6 +380,7 @@
             socket.emit("gameOver",{name:P1name})
         }
     }
+    
 
     function changeturn(){
         if(document.getElementById("turn").innerText==(P1name + "'s Turn")&&name==P2name){
@@ -394,6 +397,14 @@
         }
 
     }
+
+    /*const messageInput = docment.getElementById('message-input')
+    document.getElementById('send-container').addEventListener('submit', e => {
+    e.preventDefault(); //for the page to not refresh and clear the past messages
+    const message = messageInput.value
+    socket.emit('send-chat-message',message)
+    messageInput.value = ''
+    })*/
 
 
 </script>
