@@ -16,11 +16,8 @@
             <input type="text" placeholder="Name" id="name" autocomplete="off">
         </div>
         <div>
-            <button id="find" onclick="start.play()">Search for a player</button>
-            <script>
-                var start = new Audio();
-                start.src = "sounds/start.mp3"
-            </script>
+            <button id="find" onclick="playStart()">Search for a player</button>
+            <script src="soundEffect.js"></script>
         </div>
         <img src="giphy.gif" id="loading" alt="">
     </div>
