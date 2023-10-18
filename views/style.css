@@ -9,22 +9,12 @@
   
   body {
       display: grid;
-<<<<<<< Updated upstream
       justify-content: center;
       align-items: center;
       background-image: url("image2.png");
       background-size: cover;
       background-position: center;
-      align-items: center;
       background-repeat: no-repeat;
-  
-=======
-      /*justify-content: center;*/
-      /*align-items: center;*/
-      background-image: url("river-8286407_1920.png");
-      background-size: cover;
-      background-position: center;
->>>>>>> Stashed changes
   }
   
   
@@ -39,7 +29,6 @@
 
   #game{
 
-      
       display: grid;
       place-items: center;
       
@@ -317,4 +306,9 @@
     justify-content: center;
     cursor: pointer;
     border-radius: 50%;
+}
+
+.musicBTN {
+    display: flex;
+    justify-content: center;
 }
