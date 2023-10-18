@@ -278,7 +278,7 @@
 
 #start,#submit{
       background-color: saddlebrown;
-      opacity: 80%;
+      opacity: 100%;
       cursor: pointer;
       transition: background-color 1s ease-in-out;
 

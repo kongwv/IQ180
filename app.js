@@ -99,6 +99,9 @@ io.on("connection",(socket)=>{
         }catch{
             check = false;
         }
+        if(/\d{2}/.test(e.Solution)||!e.allused){
+            check = false;
+        }
         io.emit("done",{check:check,time:parseInt(e.time)})
     })
 
