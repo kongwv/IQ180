@@ -11,10 +11,11 @@
       display: grid;
       justify-content: center;
       align-items: center;
-      background-image: url("river-8286407_1920.png");
+      background-image: url("image2.png");
       background-size: cover;
       background-position: center;
       align-items: center;
+      background-repeat: no-repeat;
   
   }
   
