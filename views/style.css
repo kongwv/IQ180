@@ -11,6 +11,7 @@
       display: grid;
       justify-content: center;
       align-items: center;
+      justify-items: center;
       background-image: url("image2.png");
       background-size: cover;
       background-position: center;
@@ -22,7 +23,7 @@
       
       display: grid;
       place-items: center;
-      transform: translateY(100px);
+      /* transform: translateY(100px); */
       
   }
 
@@ -72,7 +73,7 @@
 
   h1 {
 
-      margin: 50px 0 50px 0;
+      margin: 0px 0 50px 0;
       font-size: 8rem;
       color: pink;
       -webkit-text-stroke: .5px black;
@@ -321,7 +322,55 @@
     border-radius: 50%;
 }
 
-.musicBTN {
+#stopMusicBTN {
+    height: 60px;
+    width: 60px;
+    background-color: crimson;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.BTN {
     display: flex;
     justify-content: center;
+}
+
+#settingBTN {
+    height: 60px;
+    width: 60px;
+    background-color: crimson;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#lobbyBTN {
+    height: 60px;
+    width: 60px;
+    background-color: crimson;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#settingTitle {
+    font-size: 2rem;
+    border-color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color:rgb(0, 0, 0);
+    opacity: 100%;
+    background-color: bisque;
+    border-radius: 25%;
+    text-align: center;
 }

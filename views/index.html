@@ -11,18 +11,23 @@
 
 
 <body>
-    <div>
-        <button id = "btn-1">1</button>
-        <button id = "btn-2">2</button>
-        <button id = "btn-3">3</button>
-        <script src="scriptforbackgroundchange.js"></script>
-    </div>
-    <div class="musicBTN">
-        <audio id="music" loop>
-            <source src="sounds/solve-the-riddle.mp3" type="audio/mpeg">
-        </audio>
-        <button id="playMusicBTN" onclick="playMusic()"><i class="fa-solid fa-volume-high"></i></button>
-        <button id="playMusicBTN"><i class="fa-solid fa-volume-xmark"></i></button>
+    <button id="settingBTN"><i class="fa-solid fa-gear"></i></button>
+    <button id="lobbyBTN"><i class="fa-solid fa-house"></i></button>
+    <div id="setting">
+        <p id="settingTitle">Setting</p>
+        <div class="BTN">
+            <button id = "btn-1">1</button>
+            <button id = "btn-2">2</button>
+            <button id = "btn-3">3</button>
+            <script src="scriptforbackgroundchange.js"></script>
+        </div>
+        <div class="BTN">
+            <audio id="music" loop>
+                <source src="sounds/solve-the-riddle.mp3" type="audio/mpeg">
+            </audio>
+            <button id="playMusicBTN" onclick="playMusic()"><i class="fa-solid fa-volume-high"></i></button>
+            <button id="stopMusicBTN" onclick="stopMusic()"><i class="fa-solid fa-volume-xmark"></i></button>
+        </div>
     </div>
     <div id="lobby">
         <h1>IQ180</h1>

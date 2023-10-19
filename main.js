@@ -1,6 +1,27 @@
 document.getElementById("game").style.display = "none"
     document.getElementById("loading").style.display = "none"
+    document.getElementById("setting").style.display = "none"
+    document.getElementById("lobbyBTN").style.display = "none"
+    
     var socket = io();
+
+    document.getElementById("settingBTN").addEventListener("click", function() {
+        document.getElementById("lobbyBTN").style.display = "block"
+        document.getElementById("setting").style.display = "block";
+        document.getElementById("settingBTN").style.display = "none"
+        document.getElementById("game").style.display = "none"
+        document.getElementById("lobby").style.display = "none"
+        document.getElementById("GO").style.display = "none"
+    }) 
+
+    document.getElementById("lobbyBTN").addEventListener("click", function() {
+        document.getElementById("lobbyBTN").style.display = "none"
+        document.getElementById("setting").style.display = "none";
+        document.getElementById("settingBTN").style.display = "block"
+        document.getElementById("game").style.display = "none"
+        document.getElementById("lobby").style.display = "block"
+        document.getElementById("GO").style.display = "none"
+    })
 
     let name;
 
@@ -38,6 +59,7 @@ document.getElementById("game").style.display = "none"
             document.getElementById("game").style.display = "block"
             document.getElementById("lobby").style.display = "none"
             document.getElementById("GO").style.display = "none"
+            document.getElementById("settingBTN").style.display = "none"
 
             document.getElementById("user1Name").innerText = P1name
             document.getElementById("user2Name").innerText = P2name
