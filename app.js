@@ -24,10 +24,10 @@ io.on("connection",(socket)=>{
     console.log(socket.id)
     connectedArray.push({id:(socket.id),name:""})
     io.emit('admin',{ca:connectedArray})
-
-    //socket.on('send-chat-message', message => {
-      //  console.log(message)
-    //})
+    socket.on('send-chat-message', message =>{
+        socket.broadcast.emit('chat-message',message) //send message to everyone that connected except the sender
+    
+    })
 
 
     socket.on('disconnect', () => {
