@@ -2,6 +2,7 @@ document.getElementById("game").style.display = "none"
     document.getElementById("loading").style.display = "none"
     document.getElementById("setting").style.display = "none"
     document.getElementById("lobbyBTN").style.display = "none"
+    document.getElementById("Chat").style.display = "block"
     
     var socket = io();
 
@@ -60,6 +61,7 @@ document.getElementById("game").style.display = "none"
             document.getElementById("lobby").style.display = "none"
             document.getElementById("GO").style.display = "none"
             document.getElementById("settingBTN").style.display = "none"
+            document.getElementById("Chat").style.display = "block"
 
             document.getElementById("user1Name").innerText = P1name
             document.getElementById("user2Name").innerText = P2name
