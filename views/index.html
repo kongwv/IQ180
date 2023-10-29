@@ -13,6 +13,7 @@
 <body>
     <button id="settingBTN"><i class="fa-solid fa-gear"></i></button>
     <button id="lobbyBTN"><i class="fa-solid fa-house"></i></button>
+    <button id="ruleBTN" onclick="window.location.href='rule'" ><i class="fa-solid fa-question"></i></button>
     <div id="setting">
         <p id="settingTitle">Setting</p>
         <div class="BTN">
@@ -33,6 +34,7 @@
         <h1>IQ180</h1>
         <div>
             <p class="enterName">Enter your Name </p>
+            <br>
             <input type="text" placeholder="Name" id="name" autocomplete="off">
         </div>
         <div>
@@ -46,7 +48,7 @@
         <br>
         <div class= "status" >
             <h2 id="user1Cont">P1 : <span id="user1Name"></span></h2>
-            <h2 >Time: <span id="timer">60</span></h2>
+            <h2 id = "time">Time: <span id="timer">60</span></h2>
             <h2 id="user2Cont">P2 : <span id="user2Name"></span></h2>
         </div>
         <div class="status">
@@ -101,6 +103,7 @@
   
         <div id = "GO" >
             <h1 id="winner" style="text-align: center;"></h1>
+            <br>
             <button id = "bh" >Back to first page</button>
         </div>
         

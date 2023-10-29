@@ -6,10 +6,16 @@
 <body>
     <h1>Connected Clients</h1>
     <button id = "reset">Reset Game</button>
+    <h2 id = "no">Numbers of Connected Clients : </h2>
     <ul id="myList" style="display : grid; grid-template-columns: 1fr 1fr;" ></ul>
+    <button id = "show">Show Solution</button>
+    <button id = "hide">Hide Solution</button>
+    <p id = "solution"></p>
 </body>
 <script src="/socket.io/socket.io.js"></script>
 <script>
+    document.getElementById("solution").style.display = "none";
+    let solution = ""
     var socket = io();
     socket.on('admin',(e)=>{
         update(e.ca);
@@ -19,11 +25,27 @@
         update(e.ca);
     });
 
+    socket.on("start",(e)=>{
+        solution = e.thearray[6].toString() + " = " + e.thearray[5].toString()
+        document.getElementById("solution").innerText = solution;
+    })
+
+    document.getElementById("show").addEventListener("click", function() {
+        document.getElementById("solution").style.display = "block";
+    })
+
+    document.getElementById("hide").addEventListener("click", function() {
+        document.getElementById("solution").style.display = "none";
+    })
+
+
     function update(l){
   
         let list = []
         document.getElementById("myList").innerText = "";
         list = document.getElementById("myList");
+        document.getElementById("no").innerText = "Numbers of Connected Clients : " + l.length.toString();
+
         for (i = 0; i < l.length; ++i) {
             a = document.createElement('p');
             b = document.createElement('p');

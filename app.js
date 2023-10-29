@@ -17,8 +17,9 @@ app.use(express.static(path.resolve("")));
 let Answer;
 let arr=[]
 let playingArray=[]
-let thearray = []
 let connectedArray=[]
+let questionset = {1:[1,2,3,4,5,20,"5*4+1+2-3"], 2:[5,4,9,8,2,99,"(8+2)*9+5+4"]}
+let i
 
 io.on("connection",(socket)=>{
     console.log(socket.id)
@@ -75,17 +76,21 @@ io.on("connection",(socket)=>{
    
     socket.on("setup",(e)=>{
         if(e.playct==0){
-            thearray = []
-            for(i=0;i<=5;i++){
-                thearray.push(_.random(1,9))
-            }
-            Answer = _.random(1,100)
-    
-            io.emit("start",{thearray:thearray,Answer:Answer,turn:turn})
+
+            i = _.random(1,2);
+            Answer = questionset[i][5]
+
+            // thearray = []
+            // for(i=0;i<=5;i++){
+            //     thearray.push(_.random(1,9))
+            // }
+            // Answer = _.random(1,100)
+            // io.emit("start",{thearray:thearray,Answer:Answer,turn:turn})
             }
         else{
-            io.emit("start",{thearray:thearray,Answer:Answer,turn:turn})
+            //io.emit("start",{thearray:thearray,Answer:Answer,turn:turn})
         }
+        io.emit("start",{thearray:questionset[i],turn:turn})
     })
 
     socket.on('round',(e)=>{
@@ -122,6 +127,10 @@ app.get('/',(req,res)=>{
 
 app.get('/admin', (req, res) => {
     return res.sendFile('./views/admin.html',{root: __dirname})
+});
+
+app.get('/rule', (req, res) => {
+    return res.sendFile('./views/rule.html',{root: __dirname})
 });
  
 server.listen(3000,()=>{

@@ -2,7 +2,7 @@ document.getElementById("game").style.display = "none"
     document.getElementById("loading").style.display = "none"
     document.getElementById("setting").style.display = "none"
     document.getElementById("lobbyBTN").style.display = "none"
-    document.getElementById("Chat").style.display = "block"
+    document.getElementById("Chat").style.display = "none"
     
     var socket = io();
 
@@ -62,6 +62,7 @@ document.getElementById("game").style.display = "none"
             document.getElementById("GO").style.display = "none"
             document.getElementById("settingBTN").style.display = "none"
             document.getElementById("Chat").style.display = "block"
+            document.getElementById("ruleBTN").style.display = "none"
 
             document.getElementById("user1Name").innerText = P1name
             document.getElementById("user2Name").innerText = P2name
@@ -102,19 +103,31 @@ document.getElementById("game").style.display = "none"
         //setup question
         socket.on("start",(e)=>{
             array = e.thearray
-            Ans = e.Answer
             let i = 0;
             document.querySelectorAll(".Q").forEach(x=>{
                 x.innerText=array[i];
                 i++;
             })
-            document.getElementById("answer").innerText=Ans;
+            document.getElementById("answer").innerText=array[5];
+        //     array = e.thearray
+        //     Ans = e.Answer
+        //     let i = 0;
+        //     document.querySelectorAll(".Q").forEach(x=>{
+        //         x.innerText=array[i];
+        //         i++;
+        //     })
+        //     document.getElementById("answer").innerText=Ans;
         })
+
         //set timer 
+        document.getElementById("time").style.color = "white";
         let timer = parseInt(document.getElementById("timer").innerText);
         int = setInterval(()=> {
             timer--;
             document.getElementById("timer").innerText = timer;
+            if(timer <=10){
+                document.getElementById("time").style.color = "red";
+            }
             if(timer == 0){
                 clearInterval(int);
                 alert("time up!! please click submit");
@@ -294,6 +307,7 @@ document.getElementById("game").style.display = "none"
             document.getElementById("com").style.display = "none"
             document.getElementById('winner').innerText = P1name + " Win!!!";
             document.getElementById("GO").style.display = "grid"
+            document.getElementById("Chat").style.display = "none"
             document.getElementById("bh").addEventListener('click',function(){
                 location.reload()
             })
@@ -304,6 +318,7 @@ document.getElementById("game").style.display = "none"
             document.getElementById("com").style.display = "none"
             document.getElementById('winner').innerText = P2name + " Win!!!";
             document.getElementById("GO").style.display = "grid"
+            document.getElementById("Chat").style.display = "none"
             document.getElementById("bh").addEventListener('click',function(){
                 location.reload()
             })

@@ -9,6 +9,7 @@
   
   body {
       display: grid;
+      text-align: center;
       justify-content: center;
       align-items: center;
       justify-items: center;
@@ -79,14 +80,13 @@
     
 }
 
-  h1 {
+h1 {
 
-      margin: 0px 0 50px 0;
-      font-size: 8rem;
-      color: rgb(255, 204, 0);
-      -webkit-text-stroke: 3px black;
-      transform: translate(20px,60px);
-      font-family: 'Times New Roman', Times, serif;
+    margin: 0px 0 50px 0;
+    font-size: 8rem;
+    color: rgb(255, 204, 0);
+    -webkit-text-stroke: 3px black;
+    font-family: 'Times New Roman', Times, serif;
 
 
      
@@ -208,7 +208,6 @@
       place-items: center;
       border: 2px solid rgba(red, green, blue, alpha);
       /* a */
-      backdrop-filter: blur(50px);
       box-shadow: 0 0 30px rgba(red, green, blue, alpha);
       /* background-color: #003c80; */
       
@@ -216,7 +215,7 @@
 }
 #Q1,#Q2,#Q3,#Q4,#Q5,#back,#O6,#O5,#O4,#O3,#O2,#O1{
       background-color: bisque;
-      transition: background-color 1s ease-in-out;
+      /*transition: background-color 1s ease-in-out;*/
 }
 #Q1:hover,#Q2:hover,#Q3:hover,#Q4:hover,#Q5:hover{
       background-color: darkseagreen;
@@ -281,15 +280,19 @@
       
 }
 .enterName{
-      font-size: 2rem;
-      border-color: black;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-      font-weight: bold;
-      color:rgb(0, 0, 0);
-      /* background-color: antiquewhite; */
-      opacity: 100%;
-      background-color: bisque;
-      border-radius: 25%;
+    font-size: 2rem;
+    border-color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color:rgb(0, 0, 0);
+    /* background-color: antiquewhite; */
+    opacity: 100%;
+    background-color: bisque;
+    height : 45px;
+    width: 350px;
+    border-radius: 10px;
+
+
       
 }
 
@@ -314,6 +317,10 @@
 #submit:hover{
       background-color: darkgreen;
       transform: scale(1.1);
+}
+
+#winner{
+    color: cyan;
 }
 
 #playMusicBTN {
@@ -369,6 +376,22 @@
     border-radius: 50%;
 }
 
+#ruleBTN {
+    height: 60px;
+    width: 60px;
+    background-color: crimson;
+    color: white;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    top :1%;
+    right :1%;
+}
+
+
 #settingTitle {
     font-size: 2rem;
     border-color: black;
@@ -380,3 +403,30 @@
     border-radius: 25%;
     text-align: center;
 }
+
+#rules{
+    background: rgba(0, 0, 100, 0.7);
+    border-radius: 25px;
+    border-style: solid;
+    border-color: black;
+    text-align: center;
+}
+
+#rules p{
+    color : white;
+    text-align: left;
+    margin : 25px 25px 25px 25px;
+    font-size: 30px;
+
+}
+
+#rules button{
+    height: 60px;
+    width: 160px;
+    background-color: gray;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
