@@ -1,3 +1,4 @@
+
 document.getElementById("game").style.display = "none"
     document.getElementById("loading").style.display = "none"
     document.getElementById("setting").style.display = "none"
@@ -26,7 +27,6 @@ document.getElementById("game").style.display = "none"
         document.getElementById("chatBTN").style.display = "none"
     })
 
-    let name;
 
     document.getElementById('find').addEventListener("click", function () {
         name = document.getElementById("name").value
@@ -114,9 +114,11 @@ document.getElementById("game").style.display = "none"
             document.getElementById("timer").innerText = timer;
             if(timer <=10){
                 document.getElementById("time").style.color = "red";
+                document.getElementById("music").playbackRate=1.5;
             }
             if(timer == 0){
                 clearInterval(int);
+                document.getElementById("music").playbackRate=1;
                 alert("time up!! please click submit");
                 document.querySelectorAll(".Q,.O").forEach(e=>e.disabled=true)
                 document.getElementById("back").disabled=true;
@@ -273,6 +275,12 @@ document.getElementById("game").style.display = "none"
         foundObject.p2.p2score = 0;
         document.getElementById("score1").innerText = foundObject.p1.p1score;
         document.getElementById("score2").innerText = foundObject.p2.p2score;
+        reset();
+        playct = 0;
+        document.getElementById("timer").innerText = 60;
+        clearInterval(int);
+        document.getElementById("start").disabled = false;
+
 
     })
     function reset(){

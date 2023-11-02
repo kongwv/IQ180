@@ -1,3 +1,5 @@
+
+
 const messageContainer = document.getElementById('message-container')
 const messageForm = document.getElementById('send-container')
 const messageInput = document.getElementById('message-input')
@@ -28,11 +30,20 @@ socket.on('chat-message', data =>{
 
 
 messagesend.addEventListener('click', function() {
-    const message = messageInput.value
+    const message = name + ": " +messageInput.value
     appendMessage(message)
     socket.emit('send-chat-message',message)
     messageInput.value = ''
 })
+
+messageInput.onkeydown = function(e){
+    if(e.keyCode == 13){
+        const message = name + ": " +messageInput.value
+        appendMessage(message)
+        socket.emit('send-chat-message',message)
+        messageInput.value = ''
+    }
+ };
 
 function appendMessage(message){
     if(document.getElementById("Chat").style.display == "none"){
@@ -42,4 +53,5 @@ function appendMessage(message){
     messageElement.innerText = message
     messageElement.style.marginLeft = "10px"; 
     messageContainer.append(messageElement)
+    messageContainer.scrollTop = messageContainer.scrollHeight;
 }
