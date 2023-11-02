@@ -64,7 +64,6 @@ io.on("connection",(socket)=>{
                 arr.splice(0,2)
                 turn = _.random(1,2)
                 io.emit('admin',{ca:connectedArray})
-
                 io.emit("find",{allPlayers:playingArray,turn:turn})
 
             }

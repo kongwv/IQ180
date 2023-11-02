@@ -3,13 +3,14 @@ document.getElementById("game").style.display = "none"
     document.getElementById("setting").style.display = "none"
     document.getElementById("lobbyBTN").style.display = "none"
     document.getElementById("Chat").style.display = "none"
+    document.getElementById("chatBTN").style.display = "none"
     
-    var socket = io();
 
     document.getElementById("settingBTN").addEventListener("click", function() {
         document.getElementById("lobbyBTN").style.display = "block"
         document.getElementById("setting").style.display = "block";
         document.getElementById("settingBTN").style.display = "none"
+        document.getElementById("chatBTN").style.display = "none"
         document.getElementById("game").style.display = "none"
         document.getElementById("lobby").style.display = "none"
         document.getElementById("GO").style.display = "none"
@@ -22,6 +23,7 @@ document.getElementById("game").style.display = "none"
         document.getElementById("game").style.display = "none"
         document.getElementById("lobby").style.display = "block"
         document.getElementById("GO").style.display = "none"
+        document.getElementById("chatBTN").style.display = "none"
     })
 
     let name;
@@ -46,10 +48,10 @@ document.getElementById("game").style.display = "none"
     let P2name =""
 
     socket.on("find", (e) => {
+        alert("Welcome"+ " "+name)
 
 
         let allPlayersArray = e.allPlayers
-        console.log("html",allPlayersArray)
 
 
         foundObject = allPlayersArray.find(obj => obj.p1.p1name == `${name}` || obj.p2.p2name == `${name}`);
@@ -57,29 +59,14 @@ document.getElementById("game").style.display = "none"
         P2name = foundObject.p2.p2name
 
         if (name == P1name||name == P2name) {
-            document.getElementById("game").style.display = "block"
-            document.getElementById("lobby").style.display = "none"
-            document.getElementById("GO").style.display = "none"
-            document.getElementById("settingBTN").style.display = "none"
-            document.getElementById("Chat").style.display = "block"
-            document.getElementById("ruleBTN").style.display = "none"
-
-            document.getElementById("user1Name").innerText = P1name
-            document.getElementById("user2Name").innerText = P2name
-            document.getElementById("score1").innerText = foundObject.p1.p1score
-            document.getElementById("score2").innerText = foundObject.p1.p1score
-            document.getElementById("submit").disabled = true
+            setup(e)
             if(e.turn==1){
                 document.getElementById("turn").innerText = (P1name + "'s Turn")
             }else{
                 document.getElementById("turn").innerText = (P2name + "'s Turn")
             }
             changeturn()
-
         }
-
-
-
     })
 
 
@@ -304,25 +291,11 @@ document.getElementById("game").style.display = "none"
     function check(){
         if (foundObject.p1.p1score == 3){
 
-            document.getElementById("com").style.display = "none"
-            document.getElementById('winner').innerText = P1name + " Win!!!";
-            document.getElementById("GO").style.display = "grid"
-            document.getElementById("Chat").style.display = "none"
-            document.getElementById("bh").addEventListener('click',function(){
-                location.reload()
-            })
-            socket.emit("gameOver",{name:P1name})
+            win(P1name)
         }
         else if (foundObject.p2.p2score == 3){
 
-            document.getElementById("com").style.display = "none"
-            document.getElementById('winner').innerText = P2name + " Win!!!";
-            document.getElementById("GO").style.display = "grid"
-            document.getElementById("Chat").style.display = "none"
-            document.getElementById("bh").addEventListener('click',function(){
-                location.reload()
-            })
-            socket.emit("gameOver",{name:P1name})
+            win(P2name)
         }
     }
     
@@ -341,4 +314,39 @@ document.getElementById("game").style.display = "none"
             document.getElementById("com").style.display = "block";
         }
 
+    }
+
+    function setup(){
+        foundObject.p1.p1score = 0
+        foundObject.p2.p2score = 0
+        document.getElementById("GO").style.display = "none"
+        document.getElementById("game").style.display = "block"
+        document.getElementById("lobby").style.display = "none"
+        document.getElementById("GO").style.display = "none"
+        document.getElementById("settingBTN").style.display = "none"
+        document.getElementById("Chat").style.display = "none"
+        document.getElementById("ruleBTN").style.display = "none"
+        document.getElementById("chatBTN").style.display = "block"
+
+        document.getElementById("user1Name").innerText = P1name
+        document.getElementById("user2Name").innerText = P2name
+        document.getElementById("score1").innerText = foundObject.p1.p1score
+        document.getElementById("score2").innerText = foundObject.p1.p1score
+        document.getElementById("submit").disabled = true
+    }
+
+    function win(x){
+        document.getElementById("com").style.display = "none"
+            document.getElementById('winner').innerText = x + " Win!!!";
+            document.getElementById("GO").style.display = "grid"
+            document.getElementById("Chat").style.display = "none"
+            document.getElementById("bh").addEventListener('click',function(){
+                location.reload()
+                socket.emit("gameOver",{name:P1name})
+            })
+            document.getElementById("pa").addEventListener('click',function(){
+                setup()
+                changeturn()
+            })
+            
     }

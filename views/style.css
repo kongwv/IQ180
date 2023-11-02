@@ -3,10 +3,15 @@
       font-family: "Poppins", sans-serif;
       margin: 0;
       padding: 0;
-      
 
   }
   
+  body,html{
+    height : 100%;
+  }
+  .bg {
+    height: 100%;
+  }
   body {
       display: grid;
       text-align: center;
@@ -17,6 +22,7 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      
   }
   
   
@@ -38,12 +44,15 @@
   #send-button{
     border: 3px solid rgb(206, 203, 203);
     font-size: 25px;
+    width: 90px;
+    height: 55px;
+
     font-weight: bold;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: antiquewhite;
     position: absolute;
-    top :77%;
-    right:36%;
+    bottom:50px;
+    left: 365px;
     
       
     
@@ -52,33 +61,61 @@
     border: 3px solid rgb(206, 203, 203);
     font-size: 25px;
     font-weight: bold;
-    width: 515px;
-    height: 100px;
+    width: 415px;
+    height: 200px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: antiquewhite;
     /* transform: translate(50px,200px); */
+    text-align: left;
     overflow: auto;
     position:absolute;
-    top :69%;
-    right:39%;
+    bottom:140px;
+    left: 50px;
+    border-radius: 10px;
 
     
 }
 #message-input{
     border: 3px solid rgb(206, 203, 203);
     font-size: 25px;
-    width: 500px;
+    width: 300px;
     font-weight: bold;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: antiquewhite;
     position: absolute;
-    top :80%;
-    right:40%;
-    
-    
-      
-    
+    bottom:50px;
+    left: 50px;
+    border-radius: 10px;
+
 }
+
+#hidechatBTN , #showchatBTN {
+    height: 45px;
+    width: 45px;
+    color: rgb(37, 89, 202);
+    background: lightgrey;
+    cursor: pointer;
+    position: absolute;
+    bottom:330px;
+    left: 30px;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+#noti {
+    height: 20px;
+    width: 20px;
+    background: rgb(255, 60, 0);
+    cursor: pointer;
+    position: absolute;
+    bottom:355px;
+    left: 55px;
+    border-radius: 50%;
+    border: 0;
+}
+
 
 h1 {
 
@@ -163,7 +200,7 @@ h1 {
 
   }
 
-  #bh {
+  #bh, #pa {
       background-color: aliceblue;
       font-size: 1.5rem;
       width: 250px;
@@ -194,6 +231,8 @@ h1 {
   #game{
       display: grid;
       place-items: center;
+      position : absolute;
+      top:5%;
   }
 
 .status {
@@ -362,6 +401,8 @@ h1 {
     justify-content: center;
     cursor: pointer;
     border-radius: 50%;
+    position: absolute;
+    top :1%;
 }
 
 #lobbyBTN {
@@ -374,6 +415,8 @@ h1 {
     justify-content: center;
     cursor: pointer;
     border-radius: 50%;
+    position: absolute;
+    top :1%;
 }
 
 #ruleBTN {
@@ -390,6 +433,7 @@ h1 {
     top :1%;
     right :1%;
 }
+
 
 
 #settingTitle {

@@ -41,7 +41,7 @@
             <button id="find" onclick="playSearchBTN()">Search for a player</button>
             <script src="soundEffect.js"></script>
         </div>
-        <img src="giphy.gif" id="loading" alt="">
+        <p id="loading">Finding player...</p>
     </div>
 
     <div id="game" >
@@ -102,9 +102,13 @@
         </div>
   
         <div id = "GO" >
+            <br>
             <h1 id="winner" style="text-align: center;"></h1>
             <br>
-            <button id = "bh" >Back to first page</button>
+            <div>
+                <button id = "bh" >Back Home</button>
+                <button id = "pa" >Play Again</button>
+            </div>
         </div>
         
     </div>
@@ -114,14 +118,16 @@
         <input type="text" id="message-input"></input>
         <button type="submit" id = "send-button">Send</button>
     </div>
-
-<script src="/main.js"></script>
-<script src="/chat.js"></script>
-<script>  
-
-    
-   
+    <div id = "chatBTN">
+        <button id="showchatBTN"><i class="fa-solid fa-comment"></i></button>
+        <button id="hidechatBTN"><i class="fa-solid fa-comment-slash"></i></button>
+        <button id="noti"></button>
+    </div>
+    <br>
+<script>
+    var socket = io();
 </script>
-    
+<script src="/chat.js"></script>
+<script src="/main.js"></script>
 </body>
 </html>

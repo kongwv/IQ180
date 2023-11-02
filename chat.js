@@ -1,16 +1,33 @@
 const messageContainer = document.getElementById('message-container')
 const messageForm = document.getElementById('send-container')
 const messageInput = document.getElementById('message-input')
+const messagesend = document.getElementById('send-button')
+
+document.getElementById("showchatBTN").style.display = "block";
+document.getElementById("hidechatBTN").style.display = "none";
+document.getElementById("noti").style.display = "none";
+
+document.getElementById("showchatBTN").addEventListener("click", function() {
+    document.getElementById("Chat").style.display = "block";
+    document.getElementById("showchatBTN").style.display = "none";
+    document.getElementById("hidechatBTN").style.display = "block";
+    document.getElementById("noti").style.display = "none";
+})
+
+document.getElementById("hidechatBTN").addEventListener("click", function() {
+    document.getElementById("Chat").style.display = "none";
+    document.getElementById("showchatBTN").style.display = "block";
+    document.getElementById("hidechatBTN").style.display = "none";
+})
 
 //const name = [prompt('What is ')]
 //appendMessage('You Joined')
-
 socket.on('chat-message', data =>{
     appendMessage(data)
 })
 
-messageForm.addEventListener('submit', e => {
-    e.preventDefault() //for the page to not refresh and clear the past messages
+
+messagesend.addEventListener('click', function() {
     const message = messageInput.value
     appendMessage(message)
     socket.emit('send-chat-message',message)
@@ -18,7 +35,11 @@ messageForm.addEventListener('submit', e => {
 })
 
 function appendMessage(message){
+    if(document.getElementById("Chat").style.display == "none"){
+        document.getElementById("noti").style.display = "block"
+    }
     const messageElement = document.createElement('div')
-    messageElement.innerText = message 
+    messageElement.innerText = message
+    messageElement.style.marginLeft = "10px"; 
     messageContainer.append(messageElement)
 }
