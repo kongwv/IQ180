@@ -198,6 +198,19 @@ h1 {
 
 
   }
+  #surrender {
+
+    font-size: 2rem;
+    background-color: black;
+    opacity: 50%;
+    width: 200px;
+    height: 60px;
+    color: antiquewhite;
+    font-weight: bold;
+    position:absolute;
+    
+
+}
 
   #bh, #pa {
       background-color: aliceblue;
@@ -335,7 +348,7 @@ h1 {
 }
 
 
-#start,#submit{
+#start,#submit,#surrender{
       background-color: saddlebrown;
       opacity: 100%;
       cursor: pointer;
@@ -345,6 +358,12 @@ h1 {
 #start:hover{
       background-color: black;
       transform: scale(1.1);
+
+
+}
+#surrender:hover{
+    background-color: rgb(252, 14, 45);
+    transform: scale(1.1);
 
 
 }
