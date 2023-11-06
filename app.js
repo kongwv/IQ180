@@ -43,15 +43,17 @@ io.on("connection",(socket)=>{
             found = connectedArray.find((element) => element.id == socket.id);
             connectedArray[connectedArray.indexOf(found)].name = e.name
             console.log(connectedArray)
-            arr.push(e.name)
+            arr.push([e.name,e.avatar])
 
             if(arr.length>=2){
                 let p1obj={
-                    p1name:arr[0],
+                    p1name:arr[0][0],
+                    p1avatar:arr[0][1],
                     p1score:0
                 }
                 let p2obj={
-                    p2name:arr[1],
+                    p2name:arr[1][0],
+                    p2avatar:arr[1][1],
                     p2score:0
                 }
                 let obj={
@@ -60,9 +62,9 @@ io.on("connection",(socket)=>{
                 }
                 playingArray.push(obj)
                 
-
                 arr.splice(0,2)
                 turn = _.random(1,2)
+                console.log(playingArray)
                 io.emit('admin',{ca:connectedArray})
                 io.emit("find",{allPlayers:playingArray,turn:turn})
 

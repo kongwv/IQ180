@@ -44,7 +44,7 @@ document.getElementById("game").style.display = "none"
         }
         else {
 
-            socket.emit("find", { name: name })
+            socket.emit("find", { name: name , avatar: document.getElementById("selectedAvatar").src})
 
             document.getElementById("loading").style.display = "block"
             document.getElementById("find").disabled = true;
@@ -66,8 +66,12 @@ document.getElementById("game").style.display = "none"
         foundObject = allPlayersArray.find(obj => obj.p1.p1name == `${name}` || obj.p2.p2name == `${name}`);
         P1name = foundObject.p1.p1name
         P2name = foundObject.p2.p2name
+        P1avatar = foundObject.p1.p1avatar
+        P2avatar = foundObject.p2.p2avatar
+
 
         if (name == P1name||name == P2name) {
+
             setup(e)
             if(e.turn==1){
                 document.getElementById("turn").innerText = (P1name + "'s Turn")
@@ -280,15 +284,18 @@ document.getElementById("game").style.display = "none"
     })
 
     socket.on('resetGame',()=>{
-        foundObject.p1.p1score = 0;
-        foundObject.p2.p2score = 0;
-        document.getElementById("score1").innerText = foundObject.p1.p1score;
-        document.getElementById("score2").innerText = foundObject.p2.p2score;
-        reset();
-        playct = 0;
-        document.getElementById("timer").innerText = 60;
-        clearInterval(int);
-        document.getElementById("start").disabled = false;
+        // foundObject.p1.p1score = 0;
+        // foundObject.p2.p2score = 0;
+        // document.getElementById("score1").innerText = foundObject.p1.p1score;
+        // document.getElementById("score2").innerText = foundObject.p2.p2score;
+        // reset();
+        // playct = 0;
+        // document.getElementById("timer").innerText = 60;
+        // clearInterval(int);
+        // document.getElementById("start").disabled = false;
+        location.reload()
+        socket.emit("gameOver",{name:P1name})
+        
 
 
     })
@@ -308,11 +315,11 @@ document.getElementById("game").style.display = "none"
     function check(){
         if (foundObject.p1.p1score == 3){
 
-            win(P1name)
+            win(P1name,P1avatar)
         }
         else if (foundObject.p2.p2score == 3){
 
-            win(P2name)
+            win(P2name,P2avatar)
         }
     }
     
@@ -346,7 +353,10 @@ document.getElementById("game").style.display = "none"
         document.getElementById("chatBTN").style.display = "block"
         document.getElementById("avatarContainer").style.display = "none"
         document.getElementById("textavatar").style.display = "none"
+        document.getElementById("selectedAvatar").style.display = "none"
 
+        document.getElementById("P1Avatar").src = P1avatar
+        document.getElementById("P2Avatar").src = P2avatar
         document.getElementById("user1Name").innerText = P1name
         document.getElementById("user2Name").innerText = P2name
         document.getElementById("score1").innerText = foundObject.p1.p1score
@@ -354,8 +364,9 @@ document.getElementById("game").style.display = "none"
         document.getElementById("submit").disabled = true
     }
 
-    function win(x){
+    function win(x,y){
         document.getElementById("com").style.display = "none"
+        document.getElementById("winAvatar").src = y
             document.getElementById('winner').innerText = x + " Win!!!";
             document.getElementById("GO").style.display = "grid"
             document.getElementById("Chat").style.display = "none"
