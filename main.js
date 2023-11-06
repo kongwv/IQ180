@@ -5,6 +5,7 @@ document.getElementById("game").style.display = "none"
     document.getElementById("lobbyBTN").style.display = "none"
     document.getElementById("Chat").style.display = "none"
     document.getElementById("chatBTN").style.display = "none"
+
     
 
     document.getElementById("settingBTN").addEventListener("click", function() {
@@ -14,7 +15,11 @@ document.getElementById("game").style.display = "none"
         document.getElementById("chatBTN").style.display = "none"
         document.getElementById("game").style.display = "none"
         document.getElementById("lobby").style.display = "none"
-        document.getElementById("GO").style.display = "none"
+        document.getElementById("GO").style.display = "none" 
+        document.getElementById("avatarContainer").style.display = "none"
+        document.getElementById("selectedAvatar").style.display = "none"
+        document.getElementById("textavatar").style.display = "none"
+        
     }) 
 
     document.getElementById("lobbyBTN").addEventListener("click", function() {
@@ -25,6 +30,10 @@ document.getElementById("game").style.display = "none"
         document.getElementById("lobby").style.display = "block"
         document.getElementById("GO").style.display = "none"
         document.getElementById("chatBTN").style.display = "none"
+        document.getElementById("avatarContainer").style.display = "block"
+        document.getElementById("selectedAvatar").style.display = "block"
+        document.getElementById("textavatar").style.display = "block"
+
     })
 
 
@@ -335,6 +344,8 @@ document.getElementById("game").style.display = "none"
         document.getElementById("Chat").style.display = "none"
         document.getElementById("ruleBTN").style.display = "none"
         document.getElementById("chatBTN").style.display = "block"
+        document.getElementById("avatarContainer").style.display = "none"
+        document.getElementById("textavatar").style.display = "none"
 
         document.getElementById("user1Name").innerText = P1name
         document.getElementById("user2Name").innerText = P2name

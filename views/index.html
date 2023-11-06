@@ -11,6 +11,16 @@
 
 
 <body>
+    <div id="avatarContainer">
+        <img src="images/avatar1.png" class="avatar" onclick="selectAvatar('images/avatar1.png')" />
+        <img src="images/avatar2.png" class="avatar1" onclick="selectAvatar('images/avatar2.png')" />
+        <img src="images/avatar3.png" class="avatar2" onclick="selectAvatar('images/avatar3.png')" />
+    </div>
+    <div>
+        <h4 id ="textavatar">Select your Avatar</h4>
+        <img id="selectedAvatar"  class = "selectedAvatar" src="" alt="Selected Avatar" />
+    </div>
+    <script src="script.js"></script>
     <button id="settingBTN"><i class="fa-solid fa-gear"></i></button>
     <button id="lobbyBTN"><i class="fa-solid fa-house"></i></button>
     <button id="ruleBTN" onclick="window.location.href='rule'" ><i class="fa-solid fa-question"></i></button>
