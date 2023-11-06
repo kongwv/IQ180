@@ -4,6 +4,12 @@ function playSearchBTN() {
     start.play();
 }
 
+function playAnyBTN() {
+    var select = new Audio();
+    select.src = "sounds/select.mp3";
+    select.play();
+}
+
 var music = document.getElementById("music");
 var x = new Boolean;
 
