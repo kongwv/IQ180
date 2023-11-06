@@ -11,8 +11,8 @@
 
 
 <body>
-    <button id="settingBTN"><i class="fa-solid fa-gear"></i></button>
-    <button id="lobbyBTN"><i class="fa-solid fa-house"></i></button>
+    <button id="settingBTN" onclick="playAnyBTN()"><i class="fa-solid fa-gear"></i></button>
+    <button id="lobbyBTN" onclick="playAnyBTN()"><i class="fa-solid fa-house"></i></button>
     <button id="ruleBTN" onclick="window.location.href='rule'" ><i class="fa-solid fa-question"></i></button>
     <div id="setting">
         <p id="settingTitle">Setting</p>
@@ -61,11 +61,11 @@
         <div id="com">
             <div id="Qnum">
                 <div>
-                    <button id="Q1" class="Q"></button>
-                    <button id="Q2" class="Q"></button>
-                    <button id="Q3" class="Q"></button>
-                    <button id="Q4" class="Q"></button>
-                    <button id="Q5" class="Q"></button>
+                    <button id="Q1" onclick="playAnyBTN()" class="Q"></button>
+                    <button id="Q2" onclick="playAnyBTN()" class="Q"></button>
+                    <button id="Q3" onclick="playAnyBTN()" class="Q"></button>
+                    <button id="Q4" onclick="playAnyBTN()" class="Q"></button>
+                    <button id="Q5" onclick="playAnyBTN()" class="Q"></button>
                 </div>
             </div>
             <br>
@@ -78,14 +78,14 @@
             <br>
             <div id="operators" >
                 <div>
-                    <button id="O1" class="O">+</button>
-                    <button id="O2" class="O">-</button>
-                    <button id="O3" class="O">*</button>
-                    <button id="O4" class="O">/</button>
+                    <button id="O1" onclick="playAnyBTN()" class="O">+</button>
+                    <button id="O2" onclick="playAnyBTN()" class="O">-</button>
+                    <button id="O3" onclick="playAnyBTN()" class="O">*</button>
+                    <button id="O4" onclick="playAnyBTN()" class="O">/</button>
                     <br>
-                    <button id="O5" class="O">(</button>
-                    <button id="O6" class="O">)</button>
-                    <button id="back">UNDO</button>
+                    <button id="O5" onclick="playAnyBTN()" class="O">(</button>
+                    <button id="O6" onclick="playAnyBTN()" class="O">)</button>
+                    <button id="back" onclick="playAnyBTN()">UNDO</button>
 
                 </div>
             </div>
@@ -93,9 +93,9 @@
             <br>
             <div style = "display: grid; place-items: center; grid-template-columns: 1fr 1fr 1fr 1fr;">
                 <p></p>
-                <button id="start" >START</button>
-                <button id="submit" >SUBMIT</button>
-                <button id="surrender" >SURRENDER</button>
+                <button id="start" onclick="playAnyBTN()" >START</button>
+                <button id="submit" onclick="playAnyBTN()" >SUBMIT</button>
+                <button id="surrender" onclick="playAnyBTN()" >SURRENDER</button>
                 <p></p>
     
                 
@@ -107,8 +107,8 @@
             <h1 id="winner" style="text-align: center;"></h1>
             <br>
             <div>
-                <button id = "bh" >Back Home</button>
-                <button id = "pa" >Play Again</button>
+                <button id = "bh" onclick="playAnyBTN()" >Back Home</button>
+                <button id = "pa" onclick="playAnyBTN()">Play Again</button>
             </div>
         </div>
         
