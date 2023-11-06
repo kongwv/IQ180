@@ -5,10 +5,13 @@ let btn2 = document.querySelector('#btn-2');
 
 btn1.addEventListener('click', () =>{
     document.body.style.backgroundImage = "url('images/24.jpg')";
+    playAnyBTN();
 })
 btn2.addEventListener('click', () =>{
     document.body.style.backgroundImage = "url('images/qq.jpg')";
+    playAnyBTN();
 })
 btn3.addEventListener('click', () =>{
     document.body.style.backgroundImage = "url('views/image2.png')";
+    playAnyBTN();
 })
