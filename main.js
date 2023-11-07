@@ -299,6 +299,21 @@ document.getElementById("game").style.display = "none"
 
 
     })
+
+    document.getElementById("surrender").addEventListener("click", function (){
+        socket.emit("Surrender",{name:name})
+    
+    })
+    socket.on('surrendered',(e)=>{
+        if(e.surrendername==P1name){
+            surrender(P1name)
+        }
+        if(e.surrendername==P2name){
+            surrender(P2name)
+        }
+    })
+    
+
     function reset(){
         document.querySelectorAll(".Q").forEach(e=>e.innerText="")
         document.getElementById("O1").innerText="+"
@@ -321,6 +336,7 @@ document.getElementById("game").style.display = "none"
 
             win(P2name,P2avatar)
         }
+        
     }
     
 
@@ -382,3 +398,20 @@ document.getElementById("game").style.display = "none"
             })
             
     }
+    function surrender(x){
+        document.getElementById("com").style.display = "none"
+        document.getElementById("winAvatar").style.display = "none"
+            document.getElementById('winner').innerText = x + " Surrender!!";
+            document.getElementById("GO").style.display = "grid"
+            document.getElementById("Chat").style.display = "none"
+            document.getElementById("bh").addEventListener('click',function(){
+                location.reload()
+                socket.emit("gameOver",{name:P1name})
+            })
+            document.getElementById("pa").addEventListener('click',function(){
+                setup()
+                changeturn()
+            })
+            
+    }
+

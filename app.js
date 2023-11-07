@@ -30,7 +30,10 @@ io.on("connection",(socket)=>{
     
     })
 
-
+    socket.on('Surrender',(e)=>{
+        socket.emit("surrendered",{surrendername:e.name})
+    })
+    
     socket.on('disconnect', () => {
         connectedArray = connectedArray.filter(e => (e.id != socket.id))
         io.emit('user-disconnected', {ca:connectedArray});

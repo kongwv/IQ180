@@ -21,8 +21,7 @@ document.getElementById("hidechatBTN").addEventListener("click", function() {
     document.getElementById("hidechatBTN").style.display = "none";
 })
 
-//const name = [prompt('What is ')]
-//appendMessage('You Joined')
+
 socket.on('chat-message', data =>{
     appendMessage(data)
 })
