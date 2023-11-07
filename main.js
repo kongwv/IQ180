@@ -361,6 +361,8 @@ document.getElementById("game").style.display = "none"
         document.getElementById("user2Name").innerText = P2name
         document.getElementById("score1").innerText = foundObject.p1.p1score
         document.getElementById("score2").innerText = foundObject.p1.p1score
+        document.querySelectorAll(".Q,.O").forEach(e => e.disabled = true);
+        document.getElementById("back").disabled = true;
         document.getElementById("submit").disabled = true
     }
 
