@@ -27,27 +27,27 @@ io.on("connection",(socket)=>{
     io.emit('admin',{ca:connectedArray})
     socket.on('send-chat-message', message =>{
         socket.broadcast.emit('chat-message',message) //send message to everyone that connected except the sender
-    
+        
     })
-
+    
     socket.on('Surrender',(e)=>{
-        socket.emit("surrendered",{surrendername:e.name})
+        io.emit("surrendered",{surrendername:e.name})
     })
     
     socket.on('disconnect', () => {
         connectedArray = connectedArray.filter(e => (e.id != socket.id))
         io.emit('user-disconnected', {ca:connectedArray});
     })
-
+    
     socket.on("find",(e)=>{
-
-
+        
+        
         if(e.name!=null){
             found = connectedArray.find((element) => element.id == socket.id);
             connectedArray[connectedArray.indexOf(found)].name = e.name
             console.log(connectedArray)
             arr.push([e.name,e.avatar])
-
+            
             if(arr.length>=2){
                 let p1obj={
                     p1name:arr[0][0],
@@ -70,33 +70,33 @@ io.on("connection",(socket)=>{
                 console.log(playingArray)
                 io.emit('admin',{ca:connectedArray})
                 io.emit("find",{allPlayers:playingArray,turn:turn})
-
+                
             }
-
+            
         }
-
+        
     })
-
-   
+    
+    
     socket.on("setup",(e)=>{
         if(e.playct==0){
-
+            
             i = _.random(1,2);
             Answer = questionset[i][5]
-
+            
             // thearray = []
             // for(i=0;i<=5;i++){
             //     thearray.push(_.random(1,9))
             // }
             // Answer = _.random(1,100)
             // io.emit("start",{thearray:thearray,Answer:Answer,turn:turn})
-            }
+        }
         else{
             //io.emit("start",{thearray:thearray,Answer:Answer,turn:turn})
         }
         io.emit("start",{thearray:questionset[i],turn:turn})
     })
-
+    
     socket.on('round',(e)=>{
         try{
             if (eval(e.Solution) == Answer){
@@ -113,11 +113,11 @@ io.on("connection",(socket)=>{
         }
         io.emit("done",{check:check,time:parseInt(e.time)})
     })
-
+    
     socket.on("gameOver",(e)=>{
         playingArray=playingArray.filter(obj=>obj.p1.p1name!==e.name)
     })
-
+    
     socket.on('resetGame',()=>{
         io.emit('resetGame')
     })
@@ -136,7 +136,7 @@ app.get('/admin', (req, res) => {
 app.get('/rule', (req, res) => {
     return res.sendFile('./views/rule.html',{root: __dirname})
 });
- 
+
 server.listen(3000,()=>{
     console.log('port connected to 3000')
 })

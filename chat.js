@@ -41,7 +41,7 @@ messageInput.onkeydown = function(e){
         socket.emit('send-chat-message',message)
         messageInput.value = ''
     }
- };
+};
 
 function appendMessage(message){
     if(document.getElementById("Chat").style.display == "none"){
