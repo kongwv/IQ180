@@ -12,6 +12,6 @@ btn2.addEventListener('click', () =>{
     playAnyBTN();
 })
 btn3.addEventListener('click', () =>{
-    document.body.style.backgroundImage = "url('views/image2.png')";
+    document.body.style.backgroundImage = "url('images/image2.png')";
     playAnyBTN();
 })
