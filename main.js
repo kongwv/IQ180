@@ -36,7 +36,6 @@ document.getElementById("game").style.display = "none"
 
     })
 
-
     document.getElementById('find').addEventListener("click", function () {
         name = document.getElementById("name").value
         if (name == null || name == '') {
@@ -127,11 +126,15 @@ document.getElementById("game").style.display = "none"
             document.getElementById("timer").innerText = timer;
             if(timer <=10){
                 document.getElementById("time").style.color = "red";
+                document.getElementById("music").src="/sounds/clockticking.mp3";
+                document.getElementById("music").play();
                 document.getElementById("music").playbackRate=1.5;
             }
             if(timer == 0){
                 clearInterval(int);
                 document.getElementById("music").playbackRate=1;
+                document.getElementById("music").src="/sounds/solve-the-riddle.mp3";
+                document.getElementById("music").play();
                 alert("time up!! please click submit");
                 document.querySelectorAll(".Q,.O").forEach(e=>e.disabled=true)
                 document.getElementById("back").disabled=true;
@@ -312,7 +315,6 @@ document.getElementById("game").style.display = "none"
             surrender(P2name)
         }
     })
-    
 
     function reset(){
         document.querySelectorAll(".Q").forEach(e=>e.innerText="")
@@ -336,7 +338,6 @@ document.getElementById("game").style.display = "none"
 
             win(P2name,P2avatar)
         }
-        
     }
     
 
@@ -398,6 +399,7 @@ document.getElementById("game").style.display = "none"
             })
             
     }
+
     function surrender(x){
         document.getElementById("com").style.display = "none"
         document.getElementById("winAvatar").style.display = "none"
@@ -414,4 +416,3 @@ document.getElementById("game").style.display = "none"
             })
             
     }
-
