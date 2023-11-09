@@ -5,6 +5,7 @@ document.getElementById("setting").style.display = "none"
 document.getElementById("lobbyBTN").style.display = "none"
 document.getElementById("Chat").style.display = "none"
 document.getElementById("chatBTN").style.display = "none"
+document.getElementById("showpaperBTN").style.display = "none";
 
 
 
@@ -19,6 +20,7 @@ document.getElementById("settingBTN").addEventListener("click", function() {
     document.getElementById("avatarContainer").style.display = "none"
     document.getElementById("selectedAvatar").style.display = "none"
     document.getElementById("textavatar").style.display = "none"
+    document.getElementById("showpaperBTN").style.display = "none";
     
 }) 
 
@@ -33,6 +35,7 @@ document.getElementById("lobbyBTN").addEventListener("click", function() {
     document.getElementById("avatarContainer").style.display = "block"
     document.getElementById("selectedAvatar").style.display = "block"
     document.getElementById("textavatar").style.display = "block"
+    document.getElementById("showpaperBTN").style.display = "none";
     
 })
 
@@ -381,6 +384,7 @@ function setup(){
     document.getElementById("avatarContainer").style.display = "none"
     document.getElementById("textavatar").style.display = "none"
     document.getElementById("selectedAvatar").style.display = "none"
+    document.getElementById("showpaperBTN").style.display = "block";
     
     document.getElementById("P1Avatar").src = P1avatar
     document.getElementById("P2Avatar").src = P2avatar
@@ -399,6 +403,7 @@ function win(x,y){
     document.getElementById('winner').innerText = x + " Win!!!";
     document.getElementById("GO").style.display = "grid";
     document.getElementById("Chat").style.display = "none";
+    document.getElementById("dpaper").style.display = "none";
     document.getElementById("bh").addEventListener('click',function(){
         location.reload()
         socket.emit("gameOver",{name:P1name})
@@ -416,6 +421,7 @@ function surrender(x){
     document.getElementById('winner').innerText = x + " Surrender!!";
     document.getElementById("GO").style.display = "grid"
     document.getElementById("Chat").style.display = "none"
+    document.getElementById("dpaper").style.display = "none";
     document.getElementById("bh").addEventListener('click',function(){
         location.reload()
         socket.emit("gameOver",{name:P1name})
