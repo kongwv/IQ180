@@ -240,5 +240,5 @@ app.get('/rule', (req, res) => {
     return res.sendFile('./views/rule.html',{root: __dirname})
 });
 
-server.listen(3000,"192.168.1.47") //<-- change ip address
-
+server.listen(3000)
+//server.listen(3000,"192.168.1.47") //<-- change ip address
