@@ -127,7 +127,7 @@ document.getElementById("start").addEventListener("click",function(){
     int = setInterval(()=> {
         timer--;
         document.getElementById("timer").innerText = timer;
-        if(timer <=50){
+        if(timer <=10){
             document.getElementById("time").style.color = "red";
             if(document.getElementById("playMusicBTN").disabled){
                 document.getElementById("music").src="/sounds/clockticking.mp3";
@@ -385,6 +385,7 @@ function setup(){
     document.getElementById("textavatar").style.display = "none"
     document.getElementById("selectedAvatar").style.display = "none"
     document.getElementById("showpaperBTN").style.display = "block";
+    document.getElementById("dpaper").style.display = "block";
     
     document.getElementById("P1Avatar").src = P1avatar
     document.getElementById("P2Avatar").src = P2avatar
