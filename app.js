@@ -11,6 +11,7 @@ const { Socket } = require('dgram');
 
 const server = http.createServer(app);
 const io = new Server(server)
+
 app.use(express.static(path.resolve("")));
 
 
@@ -239,7 +240,5 @@ app.get('/rule', (req, res) => {
     return res.sendFile('./views/rule.html',{root: __dirname})
 });
 
-server.listen(3000,()=>{
-    console.log('port connected to 3000')
-})
+server.listen(3000,"192.168.1.47") //<-- change ip address
 
