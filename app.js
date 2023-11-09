@@ -239,6 +239,10 @@ app.get('/rule', (req, res) => {
     return res.sendFile('./views/rule.html',{root: __dirname})
 });
 
+app.get('/aboutUs', (req, res) => {
+    return res.sendFile('./views/aboutUs.html',{root: __dirname})
+});
+
 server.listen(3000,()=>{
     console.log('port connected to 3000')
 })

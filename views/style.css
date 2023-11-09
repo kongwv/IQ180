@@ -520,6 +520,67 @@ button.enabled {
     position: absolute;
     top :1%;
 }
+#abtusBTN {
+    height: 60px;
+    width: 60px;
+    background-color: crimson;
+    color: white;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    top :10%;
+    right :1%;
+}
+#aboutus{
+    background: rgba(0, 0, 100, 0.7);
+    border-radius: 25px;
+    border-style: solid;
+    border-color: black;
+    text-align: center;
+    
+}
+#aboutus p{
+    color : white;
+    text-align:center ;
+    margin : 14px 14px 14px 14px;
+    font-size: 20px;
+    
+}
+
+#PHOTOCREW{
+    position: absolute;
+    border-style: ridge;
+    border-color: gold;
+    border-width: 20px;
+    top :16%;
+    right :46%;
+    
+}
+#mickie{
+    height: 111px;
+    width: 100px;
+    margin-top: 0px;
+    margin-bottom: -10px;
+
+}
+
+
+
+#aboutus button{
+    height: 60px;
+    width: 160px;
+    background-color: grey;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+
 
 #ruleBTN {
     height: 60px;
@@ -550,6 +611,8 @@ button.enabled {
     text-align: center;
 }
 
+
+
 #rules{
     background: rgba(0, 0, 100, 0.7);
     border-radius: 25px;
@@ -569,7 +632,7 @@ button.enabled {
 #rules button{
     height: 60px;
     width: 160px;
-    background-color: gray;
+    background-color: grey;
     color: white;
     align-items: center;
     justify-content: center;

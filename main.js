@@ -132,7 +132,7 @@ document.getElementById("start").addEventListener("click",function(){
             if(document.getElementById("playMusicBTN").disabled){
                 document.getElementById("music").src="/sounds/clockticking.mp3";
                 document.getElementById("music").play();
-                document.getElementById("music").playbackRate=1.5;
+                document.getElementById("music").playbackRate=1;
             }
         }
         if(timer == 0){
@@ -380,6 +380,7 @@ function setup(){
     document.getElementById("settingBTN").style.display = "none"
     document.getElementById("Chat").style.display = "none"
     document.getElementById("ruleBTN").style.display = "none"
+    document.getElementById("abtusBTN").style.display = "none"
     document.getElementById("chatBTN").style.display = "block"
     document.getElementById("avatarContainer").style.display = "none"
     document.getElementById("textavatar").style.display = "none"
